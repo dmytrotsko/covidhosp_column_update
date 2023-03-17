@@ -1,0 +1,52 @@
+# example contents of 'filename.yaml' :
+# like https://github.com/cmu-delphi/delphi-epidata/blob/cc021bd12316a5865054ddff5d3d0bdadaf0fb6f/src/ddl/covid_hosp_schemadefs.yaml
+"""
+covid_hosp_facility:
+  TABLE_NAME: 'covid_hosp_facility'
+  KEY_COLS: ['hospital_pk', 'collection_week']
+  ORDERED_CSV_COLUMNS:
+    - ['hospital_pk', 'hospital_pk', str]
+    - ['collection_week', 'collection_week', intdate]
+    - ['address', 'address', str]
+state_timeseries:
+  TABLE_NAME: 'covid_hosp_state_timeseries'
+  KEY_COLS: ['state', 'date']
+  ORDERED_CSV_COLUMNS:
+    - ['state', 'state', str]
+    - ['date', 'date', intdate]
+    - ['adult_icu_bed_covid_utilization', 'adult_icu_bed_covid_utilization', float]
+"""
+######################
+## do these vvvvvv
+######################
+def create_sql_ddl_file(rep_from_yaml, table_name, output_filename):
+  # like https://github.com/cmu-delphi/delphi-epidata/blob/dev/src/ddl/covid_hosp.sql
+  table_info = rep_from_yaml[table_name]
+  open(output_filename)
+  write(output_filename, create_table_header(table_info))
+  for col in table_info:
+    write(output_filename, col_to_sql(col))
+  close(output_filename)
+def create_sql_migration_file(rep_from_yaml, table_name, new_columns, output_filename):
+  # like:
+  #   https://github.com/cmu-delphi/delphi-epidata/blob/dev/src/ddl/migrations/covid_hosp_facility_v0.2-v0.3.sql
+  #   https://github.com/cmu-delphi/delphi-epidata/blob/dev/src/ddl/migrations/covid_hosp_state_v0.2-v0.3.sql
+  table_info = rep_from_yaml[table_name]
+  open(output_filename)
+  for col in table_info:
+    if col in new_columns:
+      write(output_filename, "ALTER TABLE " + table_name + " ADD COLUMN " + col_to_sql(col))
+  close(output_filename)
+######################
+## do these ^^^^^^
+######################
+rep_from_yaml = read_yaml_file('filename.yaml')
+rep_from_source = get_representation_from_metadata('http://hhs.org/metadata' + dataset_id)
+if rep_from_yaml != rep_from_source:
+  new_info_diff = rep_from_source - rep_from_yaml
+  new_info_diff.guess_column_names_and_types()
+  new_yaml = rep_from_yaml.copy()
+  new_yaml += new_info_diff
+  create_sql_ddl_file(new_yaml, table_name, 'covid_hosp_ddl.sql')
+  create_sql_migration_file(new_yaml, table_name, new_info_diff.columns(), 'covid_hosp_ddl_migration'+date.today()+'.sql')
+  write_yaml_file('filename.yaml', new_yaml)
