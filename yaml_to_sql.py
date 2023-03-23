@@ -24,10 +24,14 @@ def yaml_to_json(filename, tablename):
 def create_table_statement(yaml_representation):
     columns = []
     for column in yaml_representation["ORDERED_CSV_COLUMNS"]:
-        if column[1] in yaml_representation["KEY_COLS"]:
-            columns.append(f"`{column[1]}` {TYPES_MAPPING[column[2]]} NOT NULL")
+        py_name = column[0]
+        sql_name = column[1]
+        if sql_name is None:
+            sql_name = py_name
+        if py_name in yaml_representation["KEY_COLS"]:
+            columns.append(f"`{sql_name}` {TYPES_MAPPING[column[2]]} NOT NULL")
         else:
-            columns.append(f"`{column[1]}` {TYPES_MAPPING[column[2]]}")
+            columns.append(f"`{sql_name}` {TYPES_MAPPING[column[2]]}")
 
     sql_statement = f"""
     CREATE TABLE `{yaml_representation["TABLE_NAME"]}` (
