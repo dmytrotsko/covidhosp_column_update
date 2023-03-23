@@ -2,7 +2,7 @@ covid_hosp_facility:
   TABLE_NAME: 'covid_hosp_facility' # possibly not needed?
   DATASET_ID: 'anag-cw7u'
   METADATA_ID: 'j4ip-wfsv'
-  KEY_COLS: ['hospital_pk', 'collection_week']
+  KEY_COLS: ['hospital_pk', 'collection_week', 'publication_date']
   AGGREGATE_KEY_COLS: ['address', 'ccn', 'city', 'fips_code', 'geocoded_hospital_address', 'hhs_ids', 'hospital_name', 'hospital_pk', 'hospital_subtype', 'is_metro_micro', 'state', 'zip']
   ORDERED_CSV_COLUMNS:
     - ['hospital_pk', 'hospital_pk', str]
@@ -73,6 +73,7 @@ covid_hosp_facility:
     - ['previous_week_patients_covid_vaccinated_doses_one_7_day_sum', 'previous_week_patients_covid_vaccinated_doses_one_7_day_sum', int]
     - ['previous_week_personnel_covid_vaccinated_doses_administered_7_day', 'previous_week_personnel_covid_vaccd_doses_administered_7_day', int]
     - ['previous_week_personnel_covid_vaccinated_doses_administered_7_day_sum', 'previous_week_personnel_covid_vaccd_doses_administered_7_day_sum', int]
+    - ['publication_date', 'publication_date', intdate] # Missing column???
     - ['staffed_adult_icu_bed_occupancy_7_day_avg', 'staffed_adult_icu_bed_occupancy_7_day_avg', float]
     - ['staffed_adult_icu_bed_occupancy_7_day_coverage', 'staffed_adult_icu_bed_occupancy_7_day_coverage', int]
     - ['staffed_adult_icu_bed_occupancy_7_day_sum', 'staffed_adult_icu_bed_occupancy_7_day_sum', int]
