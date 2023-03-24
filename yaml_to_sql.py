@@ -1,7 +1,7 @@
 import yaml
 
 
-types_mapping = {
+TYPES_MAPPING = {
     "int": "INT(11)",
     "float": "DOUBLE",
     "str": "VARCHAR(255)",
@@ -10,7 +10,7 @@ types_mapping = {
     "bool": "TINYINT(1)"
 }
 
-newline = "\n\t"
+NEWLINE = "\n\t"
 
 
 def yaml_to_json(filename, tablename):
@@ -21,12 +21,40 @@ def yaml_to_json(filename, tablename):
             print(exc)
 
 
-def create_sql_statement(yaml_representation):
+def create_table_statement(yaml_representation):
+    columns = []
+    for column in yaml_representation["ORDERED_CSV_COLUMNS"]:
+        if column[1] in yaml_representation["KEY_COLS"]:
+            columns.append(f"`{column[1]}` {TYPES_MAPPING[column[2]]} NOT NULL")
+        else:
+            columns.append(f"`{column[1]}` {TYPES_MAPPING[column[2]]}")
+
     sql_statement = f"""
     CREATE TABLE `{yaml_representation["TABLE_NAME"]}` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `issue` INT NOT NULL,
-        {f",{newline}".join([f"`{column[1]}` {types_mapping[column[2]]} {'NOT NULL' if column[1] in yaml_representation['KEY_COLS'] else ''}".strip() for column in yaml_representation["ORDERED_CSV_COLUMNS"]])}
+        {f",{NEWLINE}".join([column for column in columns])},
+        PRIMARY KEY (`id`),
+        UNIQUE KEY ({", ".join([f"`{column}`" for column in yaml_representation['KEY_COLS']])}),
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    """
+    return sql_statement
+
+#####################################
+def create_metadata_statement(yaml_representation):
+    aggregated_key_cols = [column for column in yaml_representation["ORDERED_CSV_COLUMNS"] if column[1] in yaml_representation["AGGREGATE_KEY_COLS"]]
+    columns = []
+    for column in aggregated_key_cols:
+        if column[1] in yaml_representation["KEY_COLS"]:
+            columns.append(f"`{column[1]}` {TYPES_MAPPING[column[2]]} NOT NULL")
+        else:
+            columns.append(f"`{column[1]}` {TYPES_MAPPING[column[2]]}")
+    sql_statement = f"""
+    CREATE TABLE `{yaml_representation["TABLE_NAME"]}` (
+        `id` INT NOT NULL AUTO_INCREMENT,
+        {f",{NEWLINE}".join([column for column in columns])},
+        PRIMARY KEY (`id`),
+        UNIQUE KEY ({", ".join([f"`{column}`" for column in yaml_representation['KEY_COLS']])}),
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     """
     return sql_statement
@@ -35,9 +63,13 @@ def create_sql_statement(yaml_representation):
 def main():
     table_name = "covid_hosp_facility"
     table_info = yaml_to_json("covid_hosp_schemadefs", table_name)
-    statement = create_sql_statement(table_info)
-    print(statement)
+    create_table_ddl = create_table_statement(table_info)
+    create_medatata_ddl = create_metadata_statement(table_info)
+    print(create_table_ddl)
+    print(create_medatata_ddl)
 
+
+# TODO: generate covid_hosp_facility_key
 
 if __name__ == "__main__":
     main()
