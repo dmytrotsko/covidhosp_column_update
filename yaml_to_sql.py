@@ -4,6 +4,7 @@ TYPES_MAPPING = {
     "int": "INT(11)",
     "float": "DOUBLE",
     "str": "VARCHAR(255)",
+    "fixedstr": "CHAR(5)",
     "intdate": "INT(11)",
     "geocode": "VARCHAR(32)",
     "bool": "TINYINT(1)",
