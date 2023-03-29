@@ -1,0 +1,648 @@
+[
+    {
+        "name": "hospital_pk",
+        "py_type": "hospital_pk",
+        "sql_type": "hospital_pk"
+    },
+    {
+        "name": "collection_week",
+        "py_type": "Utils.int_from_date",
+        "sql_type": "INT"
+    },
+    {
+        "name": "state",
+        "py_type": "state",
+        "sql_type": "state"
+    },
+    {
+        "name": "ccn",
+        "py_type": "ccn",
+        "sql_type": "ccn"
+    },
+    {
+        "name": "hospital_name",
+        "py_type": "hospital_name",
+        "sql_type": "hospital_name"
+    },
+    {
+        "name": "address",
+        "py_type": "address",
+        "sql_type": "address"
+    },
+    {
+        "name": "city",
+        "py_type": "city",
+        "sql_type": "city"
+    },
+    {
+        "name": "zip",
+        "py_type": "zip",
+        "sql_type": "zip"
+    },
+    {
+        "name": "hospital_subtype",
+        "py_type": "hospital_subtype",
+        "sql_type": "hospital_subtype"
+    },
+    {
+        "name": "fips_code",
+        "py_type": "fips_code",
+        "sql_type": "fips_code"
+    },
+    {
+        "name": "is_metro_micro",
+        "py_type": "is_metro_micro",
+        "sql_type": "is_metro_micro"
+    },
+    {
+        "name": "total_beds_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "all_adult_hospital_beds_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "all_adult_hospital_inpatient_beds_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "inpatient_beds_used_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "all_adult_hospital_inpatient_bed_occupied_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "inpatient_beds_used_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_adult_patients_hospitalized_confirmed_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_pediatric_patients_hospitalized_confirmed_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "inpatient_beds_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_icu_beds_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_staffed_adult_icu_beds_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "icu_beds_used_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "staffed_adult_icu_bed_occupancy_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "staffed_icu_adult_patients_confirmed_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_patients_hospitalized_confirmed_influenza_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "icu_patients_confirmed_influenza_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_patients_hospitalized_confirmed_influenza_and_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_beds_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_adult_hospital_beds_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_adult_hospital_inpatient_beds_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "inpatient_beds_used_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_adult_hospital_inpatient_bed_occupied_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "inpatient_beds_used_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_adult_patients_hospitalized_confirmed_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_pediatric_patients_hospitalized_confirmed_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "inpatient_beds_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_icu_beds_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_staffed_adult_icu_beds_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "icu_beds_used_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_adult_icu_bed_occupancy_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_icu_adult_patients_confirmed_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_patients_hospitalized_confirmed_influenza_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "icu_patients_confirmed_influenza_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_patients_hospitalized_confirmed_influenza_and_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_beds_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_adult_hospital_beds_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_adult_hospital_inpatient_beds_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "inpatient_beds_used_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_adult_hospital_inpatient_bed_occupied_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "inpatient_beds_used_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_adult_patients_hospitalized_confirmed_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_pediatric_patients_hospitalized_confirmed_and_suspected_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_pediatric_patients_hospitalized_confirmed_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "inpatient_beds_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_icu_beds_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_staffed_adult_icu_beds_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "icu_beds_used_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_adult_icu_bed_occupancy_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_icu_adult_patients_confirmed_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_patients_hospitalized_confirmed_influenza_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "icu_patients_confirmed_influenza_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_patients_hospitalized_confirmed_influenza_and_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_18_19_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_20_29_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_30_39_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_40_49_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_50",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_60",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_70",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_80",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_unknown_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_pediatric_covid_confirmed_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_covid_ed_visits_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_18",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_20",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_30",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_40",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_50",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_60",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_70_79_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_80",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_unknown_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_pediatric_covid_suspected_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_total_ed_visits_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_influenza_confirmed_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "geocoded_hospital_address",
+        "py_type": "str",
+        "sql_type": "VARCHAR",
+        "sql_type_size": 32
+    },
+    {
+        "name": "hhs_ids",
+        "py_type": "hhs_ids",
+        "sql_type": "hhs_ids"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_confirmed_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_pediatric_covid_confirmed_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_adult_covid_suspected_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_pediatric_covid_suspected_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_week_personnel_covid_vaccinated_doses_administered_7_day",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_personnel_covid_vaccinated_doses_none_7_day",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_personnel_covid_vaccinated_doses_one_7_day",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_personnel_covid_vaccinated_doses_all_7_day",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "previous_week_patients_covid_vaccinated_doses_one_7_day",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "previous_week_patients_covid_vaccinated_doses_all_7_day",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "is_corrected",
+        "py_type": "Utils.parse_bool",
+        "sql_type": "BOOLEAN"
+    },
+    {
+        "name": "all_pediatric_inpatient_bed_occupied_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "all_pediatric_inpatient_bed_occupied_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_pediatric_inpatient_bed_occupied_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_pediatric_inpatient_beds_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "all_pediatric_inpatient_beds_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "all_pediatric_inpatient_beds_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_pediatric_covid_confirmed_0_4_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_pediatric_covid_confirmed_12_17_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_pediatric_covid_confirmed_5_11_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "previous_day_admission_pediatric_covid_confirmed_unknown_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_icu_pediatric_patients_confirmed_covid_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "staffed_icu_pediatric_patients_confirmed_covid_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_icu_pediatric_patients_confirmed_covid_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_pediatric_icu_bed_occupancy_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "staffed_pediatric_icu_bed_occupancy_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "staffed_pediatric_icu_bed_occupancy_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_staffed_pediatric_icu_beds_7_day_avg",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    },
+    {
+        "name": "total_staffed_pediatric_icu_beds_7_day_coverage",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": "total_staffed_pediatric_icu_beds_7_day_sum",
+        "py_type": "int",
+        "sql_type": "INT"
+    },
+    {
+        "name": ":@computed_region_pqdx_y6mm",
+        "py_type": "float",
+        "sql_type": "DOUBLE"
+    }
+]
