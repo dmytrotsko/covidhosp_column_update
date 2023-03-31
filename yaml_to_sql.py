@@ -5,7 +5,7 @@ TYPES_MAPPING = {
     "float": {"sql_type": "DOUBLE"},
     "str": {"sql_type": "VARCHAR", "default_size": 255},
     "fixedstr": {"sql_type": "CHAR", "default_size": 5},
-    "intdate": {"sql_type": "INT",},
+    "intdate": {"sql_type": "INT"},
     "geocode": {"sql_type": "VARCHAR", "default_size": 32},
     "bool": {"sql_type": "TINYINT", "default_size": 1},
 }
