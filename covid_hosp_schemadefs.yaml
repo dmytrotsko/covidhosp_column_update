@@ -31,7 +31,7 @@ covid_hosp_facility:
   - [str:64, city, ~]
   - [fixedstr:5, fips_code, ~]
   - [geocode, geocoded_hospital_address, ~]
-  - [str, hhs_ids, ~]
+  - [str:127, hhs_ids, ~]
   - [str:256, hospital_name, ~]
   - [str:64, hospital_subtype, ~]
   - [float, icu_beds_used_7_day_avg, ~]
