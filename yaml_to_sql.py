@@ -1,13 +1,13 @@
 import yaml
 
 TYPES_MAPPING = {
-    "int": "INT(11)",
-    "float": "DOUBLE",
-    "str": "VARCHAR(255)",
-    "fixedstr": "CHAR(5)",
-    "intdate": "INT(11)",
-    "geocode": "VARCHAR(32)",
-    "bool": "TINYINT(1)",
+    "int": {"sql_type": "INT"},
+    "float": {"sql_type": "DOUBLE"},
+    "str": {"sql_type": "VARCHAR", "default_size": 255},
+    "fixedstr": {"sql_type": "CHAR", "default_size": 5},
+    "intdate": {"sql_type": "INT"},
+    "geocode": {"sql_type": "VARCHAR", "default_size": 32},
+    "bool": {"sql_type": "TINYINT", "default_size": 1},
 }
 
 NEWLINE = "\n\t"
@@ -54,9 +54,18 @@ class YamlReader:
         columns = []
         for column in self.get_table_ordered_csv_columns(table_info):
             column_name = column[1] if column[2] is None else column[2]
-            column_type = TYPES_MAPPING.get(column[0])
+            column_type_split = column[0].split(":")
+            column_type, column_length = column_type_split[0], column_type_split[1] if len(column_type_split) == 2 else None
+            sql_column_type = TYPES_MAPPING[column_type]["sql_type"]
+            if column_length:
+                sql_column_type += f"({column_length})"
+            else:
+                if TYPES_MAPPING[column_type].get("default_size"):
+                    sql_column_type += f"({TYPES_MAPPING[column_type]['default_size']})"
+                else:
+                    pass
             not_null = "NOT NULL" if column_name in self.get_table_key_columns(table_info) else ""
-            columns.append(f"`{column_name}` {column_type} {not_null}".strip())
+            columns.append(f"`{column_name}` {sql_column_type} {not_null}".strip())
 
         unique_keys = []
         for k, v in table_info["UNIQUE_INDEXES"].items():
@@ -90,7 +99,16 @@ class YamlReader:
         columns = []
         for column in aggregated_key_cols:
             column_name = column[1] if column[2] is None else column[2]
-            column_type = TYPES_MAPPING.get(column[0])
+            column_type_split = column[0].split(":")
+            column_type, column_length = column_type_split[0], column_type_split[1] if len(column_type_split) == 2 else None
+            sql_column_type = TYPES_MAPPING[column_type]["sql_type"]
+            if column_length:
+                sql_column_type += f"({column_length})"
+            else:
+                if TYPES_MAPPING[column_type].get("default_size"):
+                    column_type += f"({TYPES_MAPPING[column_type]['default_size']})"
+                else:
+                    pass
             not_null = "NOT NULL" if column_name in self.get_table_key_columns(table_info) else ""
             columns.append(f"`{column_name}` {column_type} {not_null}".strip())
 
